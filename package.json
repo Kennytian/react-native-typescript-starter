@@ -6,7 +6,7 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
     "format": "prettier --write",
-    "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
+    "lint": "tslint -c tslint.json 'src/**/*.{ts,tsx}' --fix",
     "compile": "tsc",
     "watch": "tsc -w",
     "precommit": "lint-staged && tsc"
@@ -18,20 +18,23 @@
     "redux": "^3.6.0"
   },
   "devDependencies": {
+    "@types/jest": "^22.2.2",
     "@types/react": "^16.0.40",
     "@types/react-native": "^0.52.16",
     "@types/react-redux": "^5.0.15",
-    "babel-jest": "22.4.1",
+    "@types/react-test-renderer": "^16.0.1",
+    "babel-jest": "22.4.3",
     "babel-preset-react-native": "4.0.0",
     "husky": "^0.14.3",
-    "jest": "22.4.2",
-    "lint-staged": "^7.0.0",
-    "prettier": "^1.11.1",
+    "jest": "22.4.3",
+    "lint-staged": "^7.1.2",
+    "prettier": "^1.13.3",
     "react-native-typescript-transformer": "^1.2.3",
     "react-test-renderer": "16.3.1",
+    "ts-jest": "^22.4.2",
     "tslint": "^5.9.1",
     "tslint-react": "^3.5.1",
-    "typescript": "^2.7.2"
+    "typescript": "^2.8.1"
   },
   "lint-staged": {
     "{,!(node_modules|typings)}/**/*.{ts,tsx}": [
@@ -41,6 +44,22 @@
     ]
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(js)$": "<rootDir>/node_modules/babel-jest",
+      "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "testPathIgnorePatterns": [
+      "\\.snap$",
+      "<rootDir>/node_modules/",
+      "<rootDir>/lib/"
+    ],
+    "cacheDirectory": ".jest/cache"
   }
 }
