@@ -12,8 +12,8 @@
     "precommit": "lint-staged && tsc"
   },
   "dependencies": {
-    "react": "^16.3.0-alpha.1",
-    "react-native": "0.54.0",
+    "react": "16.3.1",
+    "react-native": "0.55.4",
     "react-redux": "^5.0.7",
     "redux": "^3.6.0"
   },
@@ -28,7 +28,7 @@
     "lint-staged": "^7.0.0",
     "prettier": "^1.11.1",
     "react-native-typescript-transformer": "^1.2.3",
-    "react-test-renderer": "^16.3.0-alpha.1",
+    "react-test-renderer": "16.3.1",
     "tslint": "^5.9.1",
     "tslint-react": "^3.5.1",
     "typescript": "^2.7.2"
