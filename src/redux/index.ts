@@ -6,7 +6,8 @@ export interface AppState {
   counter: Counter;
 }
 
-export type Dispatch = ReduxDispatch<AppState>;
+// export type Dispatch = ReduxDispatch<AppState>;
+export type Dispatch = ReduxDispatch<any>;
 
 // Add more
 const appReducer = combineReducers<AppState>({

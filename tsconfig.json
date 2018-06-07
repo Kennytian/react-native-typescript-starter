@@ -5,6 +5,7 @@
     "moduleResolution": "node",
     "jsx": "react",
     "noEmit": true,
+    "skipLibCheck": true,
     "allowSyntheticDefaultImports": true
   },
   "exclude": ["node_modules"]

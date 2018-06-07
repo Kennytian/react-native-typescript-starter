@@ -37,7 +37,8 @@ export default connect<ConnectProps, DispatchProps>(
     count: state.counter.count,
     sometthing: 0
   }),
-  (dispatch: Dispatch) => ({
+  // (dispatch: Dispatch) => ({
+  (dispatch: any) => ({
     increment: () => dispatch(CounterActions.increment()),
     decrement: () => dispatch(CounterActions.decrement())
   })
